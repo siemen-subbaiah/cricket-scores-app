@@ -1,13 +1,114 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.dark-theme {
+  --clr-prim: #12181b;
+  --clr-font: #fff;
+  --clr-sec: #383838;
+  --clr-header: #673ab7;
+  --box-shadow: 4px 0 10px -3px hsl(0deg, 0%, 0%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.light-theme {
+  --clr-prim: #f0f0f0;
+  --clr-font: #282c35;
+  --clr-sec: #fff;
+  --clr-header: cornflowerblue;
+  --box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--clr-prim);
+}
+
+nav {
+  background-color: var(--clr-header);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--clr-font);
+}
+
+.icon-btn {
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: var(--clr-font);
+}
+main {
+  color: var(--clr-font);
+}
+
+.matches {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-right: 10rem;
+  margin-left: 10rem;
+}
+
+.match {
+  /* width: 70%; */
+  cursor: pointer;
+  background-color: var(--clr-sec);
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: transform 450ms;
+}
+
+.match:hover {
+  transform: scale(1.02);
+}
+
+.match-main-info {
+  display: flex;
+  justify-content: space-around;
+}
+.match-sub-info {
+  text-align: center;
+}
+.match-type {
+  position: relative;
+  bottom: 1.1rem;
+}
+
+.upcoming {
+  text-align: center;
+}
+
+.btn {
+  background-color: var(--clr-header);
+  color: var(--clr-font);
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  width: 6rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.loding {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .matches {
+    margin-right: 0;
+    margin-left: 0;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .main-info h2 {
+    font-size: 0.8rem;
+  }
+  .main-info2 h2 {
+    font-size: 0.8rem;
+  }
+  .match-type {
+    font-size: 1.3rem;
+  }
+  .upcoming {
+    font-size: 1.5rem;
+  }
 }
